@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Bebas+Neue&family=Fasthand&family=Playpen+Sans&family=Poppins:wght@100&family=Quicksand&display=swap');
+
+
+*{
+  box-sizing:border-box;
+}
+html{
+  font-size: 18px;
+
+}
+body{
+  margin: 0;
+  font-family: Quicksand, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+
+ 
