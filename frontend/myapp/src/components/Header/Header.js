@@ -1,25 +1,25 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import classes from './header.module.css';
+import { useCart } from '../../hooks/useCart';
+import { useAuth } from '../../hooks/useAuth';
+
 
 
 export default function Header() {
-    const user = {
-        name:'jhon',
-    };
-    const cart = {
-        totalCount:10,
-    };
 
-     const logout = () => {
-
-     }
+    const { user, logout } = useAuth();
+   
+    const { cart } = useCart();
+    
+    
 
   return <header className={classes.header}>
    <div className={classes.container}>
    <Link to="/" className={classes.logo}>
-   Hunger Heaven!
-   </Link>
+   <img className={classes.logoImg} src="https://cdn-icons-png.flaticon.com/256/10823/10823283.png" alt="logo image" width={60} height={60} />
+   Hunger'Z
+  </Link>
    <nav>
     <ul>
         
@@ -36,9 +36,9 @@ export default function Header() {
             <Link to="/login">Login</Link>
         )}
 
-        <li>
-            <Link to="/cart">
-                cart
+        <li className={classes.cartBag}>
+            <Link to="/cart" >
+                <img src="/images/shoppingCart.png" alt="Cart image" width={60} height={60}/>
                 {cart.totalCount >0 && <span className={classes.cart_count}>{cart.totalCount}</span>}
             </Link>
         </li>
